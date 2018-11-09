@@ -44,3 +44,4 @@ var findDocuments = function(db, callback) {
     callback(docs);
   });
 }
+
