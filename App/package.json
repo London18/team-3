@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "team-3"
+    "url": "localhost:8100"
   },
   "author": "",
   "license": "ISC",
