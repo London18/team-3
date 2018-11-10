@@ -5,14 +5,33 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>login</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
-</ion-content>
+    <ion-navbar>
+      <ion-title>
+        Julia's House Home Care Helper
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+  <ion-list>
+          <small class="error-message" *ngIf="badCred()">
+            Incorrect Username or Password
+          </small>
+  
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input #username></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" #password></ion-input>
+    </ion-item>
+  
+  </ion-list>
+  
+  <div padding>
+    <button block (click)="login()" ion-button>Login</button>
+  </div>
+  
+  </ion-content>
