@@ -12,6 +12,18 @@ export class HeaderMenuComponent {
 
   constructor(public menuCtrl: MenuController, public app: App) {
   }
+  profileClicked() {
+    console.log("profile");
+    
+  }
+  careClicked() {
+    console.log("care");
+    
+  }
+   noteClicked() {
+    console.log("note");
+    
+  }
 
   logoutClicked() {
     console.log("Logout");

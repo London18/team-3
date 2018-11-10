@@ -6,18 +6,25 @@
 -->
 <ion-header>
     <ion-navbar>
-      <ion-title>
-        Julia's House Home Care Helper
-      </ion-title>
+        <div class="titleicon">
+            <img src="../../assets/icon/favicon.png" width="35px"/>
+            <div class="title">
+                Julia's House
+             </div>
+          </div>
     </ion-navbar>
   </ion-header>
   
-  <ion-content padding>
+  <ion-content>
+  <ion-img width="300" height="300" src="../../assets/imgs/logo.png"></ion-img>
+  
+  <h1>Welcome to Julia's Helper</h1>
+  <h1>Login</h1>
+
   <ion-list>
           <small class="error-message" *ngIf="badCred()">
             Incorrect Username or Password
           </small>
-  
     <ion-item>
       <ion-label floating>Username</ion-label>
       <ion-input #username></ion-input>
