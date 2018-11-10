@@ -8,6 +8,8 @@ import { CommentPage } from '../pages/comment/comment';
 import { DetailPage } from '../pages/detail/detail'
 import { LoginPage } from '../pages/login/login'
 
+import { HeaderMenuComponent } from '../components/header-menu/header-menu'
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -17,7 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AppointmentsPage,
     DetailPage,
     LoginPage,
-    CommentPage
+    CommentPage,
+    HeaderMenuComponent
   ],
   imports: [
     BrowserModule,
