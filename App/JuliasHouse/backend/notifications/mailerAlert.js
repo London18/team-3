@@ -9,27 +9,42 @@ var transporter = nodemailer.createTransport({
 });  /*Setting up Node.js with gmail*/
 
 
-var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/";
+/* Assume that the extracted data is of the form: */
 
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("mydb");
-  dbo.collection("appointments").findOne({}, function(err, result) /*Extract data about the time leaving family home*/ {
-    if (err) throw err;
-    console.log(result.name);
-    db.close();
+CurrentTime = 2030
+LeftFamilyHome = 1800
+ArrivingHome = 0
+
+/*In the database, if a button has been pressed, it will have the value of the time it was pressed, 
+and else if it hasn't been pressed, then it will have value 0.
+*/
+var sendCarerReminder = {
+  from: 'testjuliahouse@gmail.com',
+  to: 'dzoo142857@gmail.com', /*this email would otherwise be that of the carer*/
+  subject: 'Reminder : Please update app status of your safety',
+  text: 'Carer has not confirmed safe arrival home' /*Status_message sent from database*/
+};   
+
+function sendCarerMail() {
+  myFunc = transporter.sendMail(sendCarerReminder, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+    }
+  ;
   });
-});
+}
 
-/* 
+CarerID = [1,2,3,4,5]
 
-For every carer where Leaving Family Home != 0 AND Arriving Home == 0
+for (carer in CarerID){
+  if (CurrentTime > (LeftFamilyHome + 150) && ArrivingHome == 0){
+    sendCarerMail()
+    console.log("Reminder email sent to carer" + carer)
 
+  }
+}
 
-Extract time stamp of Leaving Family Home
-If current time > leaving family time + 1.5 hours AND the extracted value for Arriving Home == 0 
-Then send email to carer to remind them as below: */
 
 var sendCarerReminder = {
   from: 'testjuliahouse@gmail.com',
@@ -38,60 +53,54 @@ var sendCarerReminder = {
   text: 'Carer has not confirmed safe arrival home' /*Status_message sent from database*/
 };   
 
-function sendCarerReminder() {
-	myFunc = transporter.sendMail(sendCarerReminder, function(error, info){
-	  if (error) {
-	    console.log(error);
-	  } else {
-	    console.log('Email sent: ' + info.response);
-	  }
-	;
-	});
+function sendCarerMail() {
+  myFunc = transporter.sendMail(sendCarerReminder, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {
+    }
+  ;
+  });
 }
 
-/* Extract time stamp of Leaving Family Home
-If current time > leaving family time + 2 hours AND the extracted value for Arriving Home == 0 
-Then send email to carer to remind them as below: */
-
-var sendNurseUrgent = {
+var sendOfficeUrgent = {
   from: 'testjuliahouse@gmail.com',
   to: 'dzoo142857@gmail.com', /*this email would otherwise be that of the nurse*/
   subject: '[URGENT] CarerName of Appointment A12344, Family of ChildName',
   text: 'Carer has not confirmed safe arrival home after 2 hours. Their phone is XXX, their home address is XXX, their next of kin details are XXX' /*Status_message sent from database*/
 };  /*Extract Carer:PhoneNum, Carer:Address, CarerKinNum*/
 
-function sendNurseUrgent() {
-	myFunc = transporter.sendMail(sendNurseUrgent, function(error, info){
-	  if (error) {
-	    console.log(error);
-	  } else {
-	    console.log('Email sent: ' + info.response);
-	  }
-	;
-	});
+function sendOfficeMail() {
+  myFunc = transporter.sendMail(sendOfficeUrgent, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {}
+  ;
+  });
 }
 
+for (carer in CarerID){
+  if (CurrentTime > (LeftFamilyHome + 200) && ArrivingHome == 0){
+    sendCarerMail()
+    console.log("Urgent mail sent to Office about carer " + carer)
 
- 
-/*setTimeout(sendEmail, 1500); Set a timer to repeat this checking process of all carers every hour. */
+  }
+}
 
 /*
-MongoClient.connect(url, function(err, db) {
-  if (err) throw err;
-  var dbo = db.db("mydb");
-  dbo.createCollection("appointments", function(err, res) {
-    if (err) throw err;
-    console.log("Collection created!");
-    db.close();
+var sendNurseUrgent = {
+  from: 'testjuliahouse@gmail.com',
+  to: 'dzoo142857@gmail.com', this email would otherwise be that of the nurse
+  subject: '[URGENT] CarerName of Appointment A12344, Family of ChildName',
+  text: 'Carer has not confirmed safe arrival home after 2 hours. Their phone is XXX, their home address is XXX, their next of kin details are XXX' /*Status_message sent from database*/
+/* };  Extract Carer:PhoneNum, Carer:Address, CarerKinNum
+
+function sendNurseMail() {
+  myFunc = transporter.sendMail(sendNurseUrgent, function(error, info){
+    if (error) {
+      console.log(error);
+    } else {}
+  ;
   });
-
-  var dbo = db.db("mydb");
-  var myobj = {"Date": "22/11/1993", "Carer_ID": "56"}
-  dbo.collection("appointments").insertOne(myobj, function(err, res) {
-    if (err) throw err;
-    console.log("1 document inserted");
-   });
-}); */
-
-
-
+}
+*/
