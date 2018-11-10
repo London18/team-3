@@ -6,6 +6,33 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content class="outer-content">
+  <ion-list>
+    <ion-list-header>
+      Today
+    </ion-list-header>
+    <button ion-item *ngFor="let today_appointment of today_appointments" (click)="appointmentSelected(today_appointment)">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/familyavatar.png">
+      </ion-thumbnail>
+      <h3>{{ today_appointment.family_name }}</h3>
+      <h1>{{ today_appointment.start_time }} - {{ today_appointment.end_time }}</h1>
+      <h2>{{ today_appointment.address }}</h2>
+      <p>{{ today_appointment.comments }}</p>
+    </button>
+  </ion-list>
+  <ion-list>
+    <ion-list-header>
+      Upcoming
+    </ion-list-header>
+    <button ion-item *ngFor="let appointment of appointments" (click)="appointmentSelected(appointment)">
+      <ion-thumbnail item-start>
+        <img src="assets/imgs/familyavatar.png">
+      </ion-thumbnail>
+      <h3>{{ appointment.family_name }}</h3>
+      <h1>{{ appointment.start_time }} - {{ appointment.end_time }}</h1>
+      <h2>{{ appointment.address }}</h2>
+      <p>{{ appointment.comments }}</p>
+    </button>
+  </ion-list>
 </ion-content>
