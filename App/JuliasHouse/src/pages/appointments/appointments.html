@@ -18,7 +18,7 @@
     </ion-list-header>
     <button ion-item *ngFor="let today_appointment of today_appointments" (click)="appointmentSelected(today_appointment)">
       <ion-thumbnail item-start>
-        <img src="assets/imgs/familyavatar.png">
+        <img src="{{today_appointment.image}}">
       </ion-thumbnail>
       <h4>{{ today_appointment.family_name }}</h4>
       <h1>{{ today_appointment.start_time }} - {{ today_appointment.end_time }}</h1>
@@ -33,7 +33,7 @@
     </ion-list-header>
     <button ion-item *ngFor="let appointment of appointments" (click)="appointmentSelected(appointment)">
       <ion-thumbnail item-start>
-        <img src="assets/imgs/familyavatar.png">
+        <img src="{{appointment.image}}">
       </ion-thumbnail>
       <h4>{{ appointment.family_name }}</h4>
       <h1>{{ appointment.start_time }} - {{ appointment.end_time }}</h1>
