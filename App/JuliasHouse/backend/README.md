@@ -1,4 +1,6 @@
-## This folder contains the scripts to connect the front end with the database
+## This backend folder contains:
+* scripts to connect the front end with the database
+* the database
 
 ### What is happening?
 
