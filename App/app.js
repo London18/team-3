@@ -1,5 +1,5 @@
 var MongoClient = require('mongodb').MongoClient
-  , assert = require('assert');
+var assert = require('assert');
 
 // Connection URL
 //var url = 'mongodb://127.0.0.1:27017';
@@ -14,7 +14,6 @@ MongoClient.connect(url, function(err, db) {
     });
   });
 });
-
 
 var insertDocuments = function(db, callback) {
   // Get the documents collection
