@@ -31,7 +31,6 @@ var insertDocuments = function(db, callback) {
 
 }
 
-
 var findDocuments = function(db, callback) {
   // Get the documents collection
   var collection = db.collection('documents');

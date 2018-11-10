@@ -1,4 +1,22 @@
+// CLIENT SIDE
+
+// Front end HTML calls functions in fetch.js
+// Fetch.js uses fetch to create http call
+// HTTP call is made to rest API
+
+
+// SERVER SIDE
+
+// HTTP call is picked up by rest API, index.js
+// NodeJS processes HTTP call
+// Uses Mongoose to talk to the MongoDB
+
+
+
 // Run this by typing in: node index.js
+
+// Request receives the info from the web page
+// Response sends info to the web page
 
 
 // We are using Express
@@ -10,16 +28,29 @@ app.listen(3000, () => {
  console.log("Server running on port 3000");
 });
 
+app.use(express.json());
+
+
+// Get list of appointments
 app.get('/appointments', function(req,res){
-	// Get list of appointments
+	
+
+
 	 console.log("Getting list of appointments");
-	 res.send("Boo!");
-	 //res.json(["Tony","Lisa","Michael","Ginger","Food"]);
+
+	 // Send JSON file in response to the webpage
+	 res.json(["Tony","Lisa"]);
 	 res.end();
 });
 
+
+// Update status
 app.put('/status', function(req,res){
-	// Update status
+	
+	// Interpret request from web page containing JSON data
+	console.log(req.body);  
+
+
 	console.log("Updating status");
 	res.end();
 });
