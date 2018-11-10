@@ -30,30 +30,56 @@ integrity - subresource integrity value
 cache - cache mode (default, reload, no-cache)
 */
 
-fetch('http://localhost:3000/url', {
+
+
+
+// Get appointments list
+fetch('http://localhost:3000/appointments', {
 	method: 'get'
 }).then(function(response) {
-
-
+	return response.text();
+}).then(function(text) {
+	console.log("Here are your appointments:");
+	console.log(text);
 }).catch(function(err) {
 	// Error :()
+});
 
+// Update status
+fetch('http://localhost:3000/status', {
+	method: 'put'
+}).then(function(response) {
+	return response.text();
+}).then(function(text) {
+	console.log("Here are your appointments:");
+	console.log(text);
+}).catch(function(err) {
+	// Error :()
 });
 
 
-/*
-var request = new Request('http://localhost:8100', {
-	method: 'POST', 
-	mode: 'cors', 
-	redirect: 'follow',
-	headers: new Headers({
-		'Content-Type': 'text/plain'
-	})
+// Login
+fetch('http://localhost:3000/login', {
+	method: 'get'
+}).then(function(response) {
+	return response.text();
+}).then(function(text) {
+	console.log("Here are your appointments:");
+	console.log(text);
+}).catch(function(err) {
+	// Error :()
 });
 
-*/
 
-// Now use it!
-//fetch(request).then(function() { /* handle response */ });
-
+// Create nurse/family/appointment
+fetch('http://localhost:3000/create', {
+	method: 'post'
+}).then(function(response) {
+	return response.text();
+}).then(function(text) {
+	console.log("Here are your appointments:");
+	console.log(text);
+}).catch(function(err) {
+	// Error :()
+});
 
