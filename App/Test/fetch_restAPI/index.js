@@ -15,6 +15,15 @@
 
 // Run this by typing in: node index.js
 
+
+
+
+// Start instance of MongoDB database
+
+
+
+
+
 // Request receives the info from the web page
 // Response sends info to the web page
 
@@ -37,6 +46,9 @@ app.get('/appointments', function(req,res){
 
 
 	 console.log("Getting list of appointments");
+
+
+
 
 	 // Send JSON file in response to the webpage
 	 res.json(["Tony","Lisa"]);

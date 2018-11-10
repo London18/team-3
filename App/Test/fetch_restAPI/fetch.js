@@ -74,7 +74,6 @@ fetch('http://localhost:3000/login', {
 
 
 
-
 // Create nurse/family/appointment
 fetch('http://localhost:3000/create', {
 	method: 'post'
