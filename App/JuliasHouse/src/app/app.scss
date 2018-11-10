@@ -21,3 +21,52 @@
     margin-top: 18px;
     }
 }
+
+body {
+    font-family: "Work Sans", sans-serif;
+}
+
+h2 {
+    text-align: center;
+    color: #ED1C57;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-top: 30px;
+}
+
+.error-message {
+    padding: 10px;
+    text-align: center;
+    color: #ED1C57;
+    font-weight: 300;
+    font-size: 1em;
+}
+
+h3 {
+    text-align: center;
+    color: #1C3371;
+    font-weight: 600;
+    font-size: 1.5em;
+    padding-bottom: 10px;
+}
+
+h5 {
+    text-align: center;
+    color: #0188CB;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+p {
+    text-align: center;
+    color: #1C3371;
+    font-weight: 400;
+    padding-top: 5px;
+    font-size: 1.2em;
+}
+
+.detail-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

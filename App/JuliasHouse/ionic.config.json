@@ -1,6 +1,8 @@
 {
   "name": "JuliasHouse",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular",
   "pro_id": "98214fd3"
 }

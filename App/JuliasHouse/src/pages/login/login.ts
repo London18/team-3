@@ -21,11 +21,22 @@ export class LoginPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.alert = false;
+
+    fetch('http://localhost:3000/login', {
+      method: 'get'
+    }).then(function (response) {
+      return response.text();
+    }).then(function (text) {
+      console.log("Login details matched");
+      console.log(text);
+    }).catch(function (err) {
+      // Error :()
+    });
   }
 
   public login() {
     console.log(this.username.value, this.password.value);
-    if(this.username.value == "admin" && this.password.value == "admin") {
+    if (this.username.value == "admin" && this.password.value == "admin") {
       this.navCtrl.setRoot(AppointmentsPage);
     } else {
       this.alert = true;
@@ -33,7 +44,7 @@ export class LoginPage {
   }
 
   badCred() {
-      return this.alert;
+    return this.alert;
   }
 
   ionViewDidLoad() {

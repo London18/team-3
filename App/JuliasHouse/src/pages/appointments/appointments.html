@@ -20,9 +20,10 @@
       <ion-thumbnail item-start>
         <img src="assets/imgs/familyavatar.png">
       </ion-thumbnail>
-      <h3>{{ today_appointment.family_name }}</h3>
+      <h4>{{ today_appointment.family_name }}</h4>
       <h1>{{ today_appointment.start_time }} - {{ today_appointment.end_time }}</h1>
-      <h2>{{ today_appointment.address }}</h2>
+      <h6>{{ today_appointment.date }}</h6>
+      <h4>{{ today_appointment.address }}</h4>
       <p>{{ today_appointment.comments }}</p>
     </button>
   </ion-list>
@@ -34,9 +35,10 @@
       <ion-thumbnail item-start>
         <img src="assets/imgs/familyavatar.png">
       </ion-thumbnail>
-      <h3>{{ appointment.family_name }}</h3>
+      <h4>{{ appointment.family_name }}</h4>
       <h1>{{ appointment.start_time }} - {{ appointment.end_time }}</h1>
-      <h2>{{ appointment.address }}</h2>
+      <h6>{{ appointment.date }}</h6>
+      <h4>{{ appointment.address }}</h4>
       <p>{{ appointment.comments }}</p>
     </button>
   </ion-list>

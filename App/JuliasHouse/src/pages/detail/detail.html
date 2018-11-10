@@ -18,20 +18,19 @@
 
 <ion-content padding>
   <ion-avatar>
-    <img src="assets/imgs/familyavatar.png">
+    <img class="detail-image" width="200" src="assets/imgs/familyavatar.png">
   </ion-avatar>
   <h5>Care Time</h5>
-  <h2>{{appointment.start_time}} - {{appointment.end_time}}</h2>
+  <h3>{{appointment.start_time}} - {{appointment.end_time}},<br/> {{appointment.date}}</h3>
   <h5>Location</h5>
-  <h2>Family Home</h2>
-  <h2>{{ appointment.address }}</h2>
+  <h3>{{ appointment.address }}</h3>
   <h5>Comments from family</h5>
   <p>{{ appointment.comments }}</p>
 
-  <ion-list radio-group>
-      <ion-list-header>
+  <ion-list no-line adio-group>
+      <h2>
         Update Sit Status
-      </ion-list-header>
+      </h2>
     
       <ion-item>
         <ion-label>On the way</ion-label>
