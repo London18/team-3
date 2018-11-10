@@ -14,33 +14,49 @@ export class AppointmentsPage {
   constructor(public navCtrl: NavController) {
     this.appointments = [];
     this.today_appointments = [];
-    for(let i = 0; i < 10; i++){
+
+    // Get appointments list
+    fetch('http://localhost:3000/appointments', {
+      method: 'get'
+
+      // These interpret the response from the rest API
+    }).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      console.log("Here are your appointments:");
+      console.log(json);
+    }).catch(function (err) {
+      // Error :()
+    });
+
+    for (let i = 0; i < 10; i++) {
       this.appointments.push({
         family_name: 'Family ' + i,
         address: '1292 Newcastle St.',
         comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
         start_time: '09:00',
         end_time: '15:30',
-        date: 'Friday, November 10, 2018',
+        date: 'Saturday, November 10, 2018',
         number: '+12910241981',
         status: 'Not started',
         id: i
       });
     }
 
-    for(let i = 0; i < 2; i++){
+    for (let i = 0; i < 2; i++) {
       this.today_appointments.push({
         family_name: 'Today Family ' + i,
         address: '1292 Newcastle St.',
         comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
         start_time: '09:00',
+        date: 'Saturday, November 10, 2018',
         end_time: '15:30',
         number: '+12910241981',
         id: i
       });
     }
   }
-  
+
   appointmentSelected(appointment) {
     this.navCtrl.push(DetailPage, {
       appointment: appointment
