@@ -14,6 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "mongodb": "^2.2.36"
+    "fetch": "^1.1.0",
+    "mongodb": "^2.2.36",
+    "node-fetch": "^2.2.1",
+    "react-native-fetch": "^2.0.0"
   }
 }
