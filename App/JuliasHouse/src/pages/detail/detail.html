@@ -18,7 +18,7 @@
 
 <ion-content padding>
   <ion-avatar>
-    <img class="detail-image" width="200" src="assets/imgs/familyavatar.png">
+    <img class="detail-image" width="200" src="{{appointment.image}}">
   </ion-avatar>
   <h5>Care Time</h5>
   <h3>{{appointment.start_time}} - {{appointment.end_time}},<br /> {{appointment.date}}</h3>
@@ -28,7 +28,7 @@
   <p>{{ appointment.comments }}</p>
 
   <div padding *ngIf="!today()">
-      <button block (click)="updateStatus('inquire')" ion-button>Inquire ahead of Appointment</button>
+      <button block (click)="updateStatus('inquire')" ion-button>Message regarding Appointment</button>
     </div>
 
   <p class="complete-message" *ngIf="complete()">

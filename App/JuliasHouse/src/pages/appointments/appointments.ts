@@ -34,7 +34,7 @@ export class AppointmentsPage {
       comments: 'Thank you so much! Look forward to seeing you again',
       start_time: '9:00',
       end_time: '12:30',
-      image: 'https://www.shutterstock.com/image-photo/family-home-17813797',
+      image: '../assets/imgs/familyavatar.png',
       date: 'Saturday, November 10, 2018',
       number: '+12910241981',
       status: 'Not started'},
@@ -43,7 +43,7 @@ export class AppointmentsPage {
       comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
       start_time: '16:00',
       end_time: '19:00',
-      image: 'https://www.shutterstock.com/image-photo/cute-little-girl-her-beautiful-parents-556490314',
+      image: '../assets/imgs/2.jpg',
       date: 'Saturday, November 10, 2018',
       number: '+967026113981',
       status: 'Not started'}]
@@ -55,7 +55,7 @@ export class AppointmentsPage {
     comments: 'We are thinking of doing a park trip today',
     start_time: '12:00',
     end_time: '19:25',
-    image: 'https://www.shutterstock.com/image-photo/technology-travel-tourism-hike-people-concept-579417739',
+    image: '../assets/imgs/3.jpg',
     date: 'Monday, November 12, 2018',
     number: '+44910241981',
     status: 'Not started'},
@@ -64,16 +64,16 @@ export class AppointmentsPage {
     comments: 'We have a birthday party to go to!',
     start_time: '16:00',
     end_time: '18:00',
-    image: 'https://www.shutterstock.com/image-photo/father-mother-holds-little-girl-on-735658939',
+    image: '../assets/imgs/4.jpg',
     date: 'Thursday, November 15, 2018',
     number: '+12910241981',
     status: 'Not started'},
     {family_name: 'Johnson',
     address: '127 Wilberforce Rd.',
     comments: 'Reading books today please!',
-    start_time: '8:00',
+    start_time: '08:00',
     end_time: '12:00',
-    image: 'https://www.shutterstock.com/image-photo/photo-happy-family-four-looking-camera-149775476',
+    image: '../assets/imgs/5.jpg',
     date: 'Friday, November 24, 2018',
     number: '+62010241981',
     status: 'Not started'},
@@ -82,7 +82,7 @@ export class AppointmentsPage {
     comments: 'See you soon, we may have to leave early',
     start_time: '13:00',
     end_time: '14:00',
-    image: 'https://www.shutterstock.com/image-photo/photo-affectionate-parents-kissing-their-small-149775455',
+    image: '../assets/imgs/2.jpg',
     date: 'Thursday, November 30, 2018',
     number: '+12910241981',
     status: 'Not started'},
@@ -91,10 +91,14 @@ export class AppointmentsPage {
     comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
     start_time: '15:00',
     end_time: '19:30',
-    image: 'https://www.shutterstock.com/image-photo/happy-asian-family-two-children-taking-278316929',
+    image: '../assets/imgs/1.jpg',
     date: 'Tuesday, December 10, 2018',
     number: '+12910241981',
     status: 'Not started'}]
+  }
+
+  callAdmin() {
+    console.log("Called!");
   }
 
   appointmentSelected(appointment) {

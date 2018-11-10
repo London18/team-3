@@ -4,6 +4,7 @@
   "description": "MongoDB for JuliasHome",
   "main": "app.js",
   "dependencies": {
+    "@ionic-native/call-number": "^4.17.0",
     "mongodb": "^3.1.9",
     "mongoose": "^5.3.11",
     "node-fetch": "^2.2.1",
