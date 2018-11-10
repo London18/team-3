@@ -64,6 +64,7 @@ app.get('/appointments', function(req,res){
 
 var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
+var jsonresult = [];
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
@@ -71,7 +72,9 @@ MongoClient.connect(url, function(err, db) {
   dbo.collection("appointments").findOne({}, function(err, result) {
     if (err) throw err;
     console.log(result);
+    jsonresult.push(result);
     db.close();
+
  });
 	
 });
@@ -91,7 +94,8 @@ MongoClient.connect(url, function(err, db) {
 	 //res.json(result); 
 
 	 // Send JSON file in response to the webpage
-	 res.json(["Tony","Lisa"]);
+	 res.json(jsonresult);
+	 //res.json(["Tony","Lisa"]);
 	
 	 res.end();
 });
