@@ -32,7 +32,7 @@ fetch('http://localhost:3000/appointments', {
 
 
 // Update status
-data = ["Michael","Ginger","Food"]
+data = ["Michael","Ginger","Food"];
 fetch('http://localhost:3000/status', {
 	method: 'put',
 
@@ -53,20 +53,26 @@ fetch('http://localhost:3000/status', {
 
 
 
-
-
 // Login
+
+logindata = ["username","password000"];
 fetch('http://localhost:3000/login', {
-	method: 'get'
+	method: 'get',
 
 }).then(function(response) {
 	return response.text();
 }).then(function(text) {
-	console.log("Login details matched");
-	console.log(text);
+	var match = "No";
+	if (logindata[1] == text){
+		match = "Yes";
+	}
+	console.log("Did the login details match?");
+	console.log(match);
 }).catch(function(err) {
 	// Error :()
 });
+
+
 
 
 // Create nurse/family/appointment

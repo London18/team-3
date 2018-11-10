@@ -47,11 +47,9 @@ app.get('/appointments', function(req,res){
 // Update status
 app.put('/status', function(req,res){
 	
-	// Interpret request from web page containing JSON data
-	console.log(req.body);  
-
-
+	// Interpret request from web page containing JSON data 
 	console.log("Updating status");
+	console.log(req.body); 
 	res.end();
 });
 
@@ -59,6 +57,9 @@ app.put('/status', function(req,res){
 app.get('/login', function(req,res){
 	// Login
 	console.log("Checking login");
+
+	res.send("password000");
+
 	res.end();
 });
 
