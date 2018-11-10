@@ -1,0 +1,53 @@
+<!--
+  Generated template for the DetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{appointment.family_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-avatar>
+    <img src="assets/imgs/familyavatar.png">
+  </ion-avatar>
+  <h5>Care Time</h5>
+  <h2>{{appointment.start_time}} - {{appointment.end_time}}</h2>
+  <h5>Location</h5>
+  <h2>Family Home</h2>
+  <h2>{{ appointment.address }}</h2>
+  <h5>Comments from family</h5>
+  <p>{{ appointment.comments }}</p>
+
+  <ion-list radio-group>
+      <ion-list-header>
+        Update Sit Status
+      </ion-list-header>
+    
+      <ion-item>
+        <ion-label>On the way</ion-label>
+        <ion-radio (ionSelect)="updateStatus('otw')"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Arrived at location</ion-label>
+        <ion-radio (ionSelect)="updateStatus('arrive')"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Completed care</ion-label>
+        <ion-radio (ionSelect)="updateStatus('complete')"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+          <ion-label>Confirm safety</ion-label>
+          <ion-radio (ionSelect)="updateStatus('confirm')"></ion-radio>
+        </ion-item>
+    </ion-list>
+</ion-content>
