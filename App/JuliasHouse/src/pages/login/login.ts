@@ -36,7 +36,7 @@ export class LoginPage {
 
   public login() {
     console.log(this.username.value, this.password.value);
-    if (this.username.value == "admin" && this.password.value == "admin") {
+    if (this.username.value == "Karen" && this.password.value == "user") {
       this.navCtrl.setRoot(AppointmentsPage);
     } else {
       this.alert = true;

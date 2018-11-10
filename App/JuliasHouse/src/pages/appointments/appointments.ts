@@ -16,9 +16,8 @@ export class AppointmentsPage {
     this.today_appointments = [];
 
     // Get appointments list
-    fetch('http://localhost:3000/appointments', {
+    fetch('http://localhost:400/appointments', {
       method: 'get'
-
       // These interpret the response from the rest API
     }).then(function (response) {
       return response.json();
@@ -29,27 +28,31 @@ export class AppointmentsPage {
       // Error :()
     });
 
-    for (let i = 0; i < 10; i++) {
-      this.appointments.push({
-        family_name: 'Family ' + i,
-        address: '1292 Newcastle St.',
-        comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
-        start_time: '09:00',
-        end_time: '15:30',
-        date: 'Saturday, November 10, 2018',
-        number: '+12910241981',
-        status: 'Not started',
-        id: i
-      });
-    }
+    this.today_appointments = [
+      {family_name: 'Morgan',
+      address: '95 Bank Street',
+      comments: 'Thank you so much! Look forward to seeing you again',
+      start_time: '9:00',
+      end_time: '12:30',
+      date: 'Saturday, November 10, 2018',
+      number: '+12910241981',
+      status: 'Not started'},
+      {family_name: 'Chase',
+      address: '72 Robinson Rd.',
+      comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
+      start_time: '16:00',
+      end_time: '19:00',
+      date: 'Saturday, November 10, 2018',
+      number: '+967026113981',
+      status: 'Not started'}]
 
-    for (let i = 0; i < 2; i++) {
-      this.today_appointments.push({
-        family_name: 'Today Family ' + i,
+    for (let i = 0; i < 4; i++) {
+      this.appointments.push({
+        family_name: 'Other Family ' + i,
         address: '1292 Newcastle St.',
         comments: 'We would like the caregiver to get there a bit early to take care of the kids.',
         start_time: '09:00',
-        date: 'Saturday, November 10, 2018',
+        date: 'Friday, November 9, 2018',
         end_time: '15:30',
         number: '+12910241981',
         id: i

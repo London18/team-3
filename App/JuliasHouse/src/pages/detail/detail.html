@@ -8,10 +8,10 @@
   <ion-navbar>
     <ion-title>{{appointment.family_name}}</ion-title>
     <ion-buttons right>
-        <button ion-button icon-only menuToggle>
-          <ion-icon name='menu'></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name='menu'></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
@@ -21,35 +21,43 @@
     <img class="detail-image" width="200" src="assets/imgs/familyavatar.png">
   </ion-avatar>
   <h5>Care Time</h5>
-  <h3>{{appointment.start_time}} - {{appointment.end_time}},<br/> {{appointment.date}}</h3>
+  <h3>{{appointment.start_time}} - {{appointment.end_time}},<br /> {{appointment.date}}</h3>
   <h5>Location</h5>
   <h3>{{ appointment.address }}</h3>
   <h5>Comments from family</h5>
   <p>{{ appointment.comments }}</p>
 
-  <ion-list no-line adio-group>
-      <h2>
-        Update Sit Status
-      </h2>
-    
-      <ion-item>
-        <ion-label>On the way</ion-label>
-        <ion-radio (ionSelect)="updateStatus('otw')"></ion-radio>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>Arrived at location</ion-label>
-        <ion-radio (ionSelect)="updateStatus('arrive')"></ion-radio>
-      </ion-item>
-    
-      <ion-item>
-        <ion-label>Completed care</ion-label>
-        <ion-radio (ionSelect)="updateStatus('complete')"></ion-radio>
-      </ion-item>
+  <div padding *ngIf="!today()">
+      <button block (click)="updateStatus('inquire')" ion-button>Inquire ahead of Appointment</button>
+    </div>
 
-      <ion-item>
-          <ion-label>Confirm safety</ion-label>
-          <ion-radio (ionSelect)="updateStatus('confirm')"></ion-radio>
-        </ion-item>
-    </ion-list>
+  <p class="complete-message" *ngIf="complete()">
+      Well done, you completed this sit!
+  </p>
+
+  <ion-list no-line adio-group *ngIf="incomplete()">
+    <h2>
+      Update Sit Status
+    </h2>
+
+    <ion-item>
+      <ion-label>On the way</ion-label>
+      <ion-radio (ionSelect)="updateStatus('otw')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Arrived at location</ion-label>
+      <ion-radio (ionSelect)="updateStatus('arrive')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Completed care</ion-label>
+      <ion-radio (ionSelect)="updateStatus('complete')"></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Confirm safety</ion-label>
+      <ion-radio (ionSelect)="updateStatus('confirm')"></ion-radio>
+    </ion-item>
+  </ion-list>
 </ion-content>

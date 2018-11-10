@@ -17,21 +17,39 @@ import { CommentPage } from '../comment/comment';
 export class DetailPage {
   appointment: any;
   status: any;
+  completion: boolean;
+  currentDay: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.appointment = navParams.get('appointment');
-    this.status = this.appointment.status
+    this.status = this.appointment.status;
+    this.currentDay = "Saturday, November 10, 2018";
   }
 
   updateStatus(status) {
-    this.navCtrl.push(CommentPage, {
-      appointment: this.appointment,
-      status: status
-    });
+    if(status=="confirm"){
+      this.completion = true;
+    }
+    this.navCtrl.push(CommentPage);
   }
 
+  today(){
+    return this.appointment.date == this.currentDay;
+  }
+  
+  complete(){
+    if (this.today()){
+      return this.completion;
+    }
+    return false;
+  }
 
-
+  incomplete(){
+    if (this.today()){
+      return !this.completion;
+    }
+    return false;
+  }
   ionViewDidLoad() {
     console.log('ionViewDidLoad DetailPage');
   }

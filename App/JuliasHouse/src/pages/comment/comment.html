@@ -13,5 +13,11 @@
 
 
 <ion-content padding>
-
+    <ion-item>
+        <ion-label>Notes or details?</ion-label>
+        <ion-input #comments></ion-input>
+      </ion-item>
+      <div padding>
+          <button block (click)="submit()" ion-button>Submit</button>
+        </div>
 </ion-content>
