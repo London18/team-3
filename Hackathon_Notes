@@ -1,0 +1,94 @@
+Hackathon Notes
+
+Installing Ionic:
+
+Installing MongoDB:
+-> ls -lh /usr/local
+-> sudo mkdir /usr/local/Frameworks
+->  sudo chown $(whoami):admin /usr/local/Frameworks
+-> brew install mongodb
+
+Hosting the App/Site:
+-> Start locally on Mac/iOS
+
+Using MongoDB:
+-> brew services start mongodb
+-> db.collection.insert({"abc":"123"})
+-> db.collection.find({})
+-> db.createCollection("log", { capped : true, size : 5242880, max : 5000 } )
+-> db.log.insert({"":"12"})
+
+Be able to interact with it from the actual hosted server
+ionic serve
+/Users/cebook/anaconda3/bin/todo/www/index.html
+change that file to change the ionic server output
+
+brew install node
+mkdir myproject
+cd myproject/
+npm init
+npm install mongodb --save
+What you put is stored in package.json
+
+For insert a document need to hear back from the Front End what type of information we will be getting exactly
+
+
+mongod --dbpath=/data
+Create a new app.js
+modify the file with the function and calling them
+thats how you put the data into the database
+node app.js
+
+
+make sure it runs on https
+configuration to do so no one can cannot your endpoint
+all data will be encrypted from front end to your service
+on mongodb you can encrypt the db itself patient details and store the keys separately in safe location
+Have a look at mungodb restrictions
+So when you call from application needs credentials to database
+Check how to set up credentials or securely configure mongodb
+
+Can run on express server
+Whatever you can run javascript on the node module
+Javacrispt ran on the backend
+
+
+npm install mongoose --save
+nod
+
+
+------
+mongo
+
+
+
+
+*Questions to prepare for judges (JP Morgan Ideology):
+How close implementation to the challenge
+Two guys coming in
+Fit for challenge
+Evaluate on the tech and how fit
+Is it maintaineble extend, widely used readily updated and why did you choose it
+How did you get it done
+Test how scalable it is can you extend it easily
+How you save data the tech you use
+Complexity of solution
+Why these technologies, why mongodb light wieight, not familiar with other databases, adjacent use
+Why ionic top 10 in 2018
+Widely used highly maintained not something niche which no one has heard of
+Want to know what people contributed too and how we function as a team
+Natural leaders and team dynamics highlighted
+Different things we work on a come together as a team
+Can show log files
+Is the data safe patient, proof of concept important to amazon cloud then we would add that encryption which is very easy on any of these frameworks (https key)
+What if I go to town and loose internet connection should still work
+What are the next steps for the project how to integrate it looking for how can this actually be used or shit
+Concrete plan to move it to production
+What would you have implemented if you had more time
+Know what we are using
+How did you divide the work
+Draft presentation at like 7am
+Coding stops at 12!
+
+
+
