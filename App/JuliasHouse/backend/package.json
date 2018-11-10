@@ -1,0 +1,19 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "description": "MongoDB for JuliasHome",
+  "main": "app.js",
+  "dependencies": {
+    "mongodb": "^3.1.9",
+    "mongoose": "^5.3.11",
+    "node-fetch": "^2.2.1",
+    "validator": "^10.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:London18/team-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
